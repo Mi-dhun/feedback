@@ -1,0 +1,6 @@
+Flask>=3.0.0
+Flask-Cors>=4.0.0
+Werkzeug>=3.0.0
+vaderSentiment>=3.3.2
+textblob>=0.18.0
+pytest>=8.0.0
