@@ -56,16 +56,9 @@
     <!-- ==================== VIEW 1: HOME & HERO ==================== -->
     <section id="view-home" class="app-view active-view">
       <div class="hero-section">
-        <div class="hero-pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          TCS iON Industry Project Standard &bull; NLP Sentiment Analysis
-        </div>
         <h1 class="hero-title">Smart Student Feedback &<br>Faculty Evaluation System</h1>
-        <p class="hero-subtitle">
-          Intelligent real-time feedback processing, automatic sentiment classification, and interactive academic quality metrics powered by Python Flask, SQLite, and Chart.js.
-        </p>
 
-        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px; margin-bottom: 36px;">
           <button class="btn btn-primary" onclick="App.navigateTo('feedback')">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
             Submit Feedback (Guest / Student)
@@ -121,39 +114,6 @@
             <div class="stat-value" id="kpi-faculty-count">--</div>
             <div class="stat-label">Faculty Evaluated</div>
           </div>
-        </div>
-      </div>
-
-      <!-- Feature Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 10px;">
-        <div class="card">
-          <h3 style="display: flex; align-items: center; gap: 8px; font-size: 1.15rem; margin-bottom: 12px; color: #818cf8;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            Guest & Student Submissions
-          </h3>
-          <p style="color: var(--text-secondary); font-size: 0.92rem;">
-            Submit feedback anonymously as a guest without any registration, or log in as a registered student to build and view your verified evaluation history.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3 style="display: flex; align-items: center; gap: 8px; font-size: 1.15rem; margin-bottom: 12px; color: #10b981;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-            AI Sentiment Analysis Engine
-          </h3>
-          <p style="color: var(--text-secondary); font-size: 0.92rem;">
-            Automatic NLP classification detects positive, neutral, and negative sentiment, computes polarity scores, extracts key phrases, and evaluates specific aspects (teaching, materials, assessment).
-          </p>
-        </div>
-
-        <div class="card">
-          <h3 style="display: flex; align-items: center; gap: 8px; font-size: 1.15rem; margin-bottom: 12px; color: #f59e0b;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-            Interactive Admin Analytics
-          </h3>
-          <p style="color: var(--text-secondary); font-size: 0.92rem;">
-            Administrators can manage faculty profiles and subjects, view sentiment charts via Chart.js, filter submissions, delete improper entries, and generate CSV/JSON reports.
-          </p>
         </div>
       </div>
     </section>
@@ -415,7 +375,7 @@
     <section id="view-student" class="app-view">
       <!-- Unauthenticated State -->
       <div id="student-unauth-box" class="card" style="text-align: center; padding: 48px 24px; display: none;">
-        <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: rgba(99, 102, 241, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #818cf8;">
+        <div style="width: 64px; height: 64px; margin: 0 auto 16px; background: #eef2ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <h3 style="font-size: 1.4rem; margin-bottom: 8px;">Student Authentication Required</h3>
@@ -496,7 +456,7 @@
         <!-- Admin Header Toolbar -->
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
           <div>
-            <span class="user-badge" style="background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.4); color: #818cf8; margin-bottom: 6px;">
+            <span class="user-badge" style="background: #eef2ff; border-color: #c7d2fe; color: var(--primary); margin-bottom: 6px;">
               Administrator Console
             </span>
             <h2 style="font-size: 1.6rem; font-weight: 700;">Academic Feedback Control Center</h2>
@@ -685,7 +645,7 @@
       </div>
 
       <!-- Quick Demo Login Helpers -->
-      <div style="background: rgba(255,255,255,0.04); border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 12px; margin-bottom: 20px;">
+      <div style="background: #f8fafc; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 12px; margin-bottom: 20px;">
         <span style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 8px;">1-Click Demo Accounts:</span>
         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
           <button type="button" class="btn btn-sm btn-outline" onclick="App.fillDemoLogin('admin')">Demo Admin</button>

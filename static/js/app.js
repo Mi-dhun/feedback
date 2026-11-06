@@ -75,14 +75,14 @@ const App = {
 
     if (this.currentUser) {
       pill.innerHTML = `
-        <span class="badge" style="background: rgba(99,102,241,0.15); color: #818cf8; border: 1px solid rgba(99,102,241,0.3);">
+        <span class="badge" style="background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe;">
           Submitting as Student: ${this.escapeHtml(this.currentUser.name)}
         </span>
       `;
       if (anonCheck) anonCheck.style.display = "block";
     } else {
       pill.innerHTML = `
-        <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-secondary); border: 1px solid var(--border-color);">
+        <span class="badge" style="background: #f1f5f9; color: var(--text-secondary); border: 1px solid var(--border-color);">
           Submitting as Anonymous Guest
         </span>
       `;
@@ -920,7 +920,7 @@ const App = {
 
         <div style="margin-bottom: 16px;">
           <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 6px;">Written Feedback</div>
-          <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; font-size: 0.95rem; line-height: 1.5;">
+          <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 14px; font-size: 0.95rem; line-height: 1.5;">
             ${this.escapeHtml(fb.message)}
           </div>
         </div>

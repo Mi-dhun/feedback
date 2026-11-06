@@ -1,6 +1,7 @@
 /**
  * Chart.js Integration Module
  * Renders interactive dynamic visualizations for sentiment and feedback analytics.
+ * Styled for Modern Clean Light UI Theme.
  */
 
 const AppCharts = {
@@ -10,22 +11,22 @@ const AppCharts = {
   ratingDistChart: null,
   timelineChart: null,
 
-  // Common dark theme chart defaults
+  // Common light theme chart defaults
   commonOptions: {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
         labels: {
-          color: "#9ca3af",
+          color: "#475569",
           font: { family: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif", size: 12 }
         }
       },
       tooltip: {
-        backgroundColor: "rgba(17, 24, 39, 0.95)",
-        titleColor: "#f9fafb",
-        bodyColor: "#e5e7eb",
-        borderColor: "rgba(255, 255, 255, 0.15)",
+        backgroundColor: "#0f172a",
+        titleColor: "#ffffff",
+        bodyColor: "#f1f5f9",
+        borderColor: "#cbd5e1",
         borderWidth: 1,
         padding: 10,
         boxPadding: 4
@@ -41,7 +42,6 @@ const AppCharts = {
   },
 
   // 1. Sentiment Distribution Doughnut / Pie Chart
-  // Direct match to Page 11 code snippet: labels: ['Positive', 'Negative', 'Neutral']
   renderSentimentPie(canvasId, sentimentCounts) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
@@ -60,11 +60,11 @@ const AppCharts = {
         datasets: [{
           data: [pos, neg, neu],
           backgroundColor: [
-            "#10b981", // Emerald Green for Positive
-            "#f43f5e", // Rose Red for Negative
-            "#f59e0b"  // Amber Orange for Neutral
+            "#059669", // Emerald Green for Positive
+            "#e11d48", // Rose Red for Negative
+            "#d97706"  // Amber Orange for Neutral
           ],
-          borderColor: "#111827",
+          borderColor: "#ffffff",
           borderWidth: 3,
           hoverOffset: 6
         }]
@@ -77,7 +77,7 @@ const AppCharts = {
           legend: {
             position: "bottom",
             labels: {
-              color: "#9ca3af",
+              color: "#475569",
               padding: 14
             }
           }
@@ -106,8 +106,8 @@ const AppCharts = {
           {
             label: "Average Rating (out of 5)",
             data: ratings,
-            backgroundColor: "rgba(99, 102, 241, 0.8)",
-            borderColor: "#6366f1",
+            backgroundColor: "rgba(79, 70, 229, 0.85)",
+            borderColor: "#4f46e5",
             borderWidth: 1,
             borderRadius: 6,
             yAxisID: "y"
@@ -115,8 +115,8 @@ const AppCharts = {
           {
             label: "Reviews Count",
             data: counts,
-            backgroundColor: "rgba(16, 185, 129, 0.4)",
-            borderColor: "#10b981",
+            backgroundColor: "rgba(5, 150, 105, 0.4)",
+            borderColor: "#059669",
             borderWidth: 1,
             borderRadius: 6,
             yAxisID: "y1"
@@ -127,8 +127,8 @@ const AppCharts = {
         ...this.commonOptions,
         scales: {
           x: {
-            ticks: { color: "#9ca3af", maxRotation: 30 },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b", maxRotation: 30 },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           },
           y: {
             type: "linear",
@@ -136,15 +136,15 @@ const AppCharts = {
             position: "left",
             min: 0,
             max: 5,
-            ticks: { color: "#9ca3af", stepSize: 1 },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b", stepSize: 1 },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           },
           y1: {
             type: "linear",
             display: true,
             position: "right",
             min: 0,
-            ticks: { color: "#9ca3af", stepSize: 2 },
+            ticks: { color: "#64748b", stepSize: 2 },
             grid: { drawOnChartArea: false }
           }
         }
@@ -173,19 +173,19 @@ const AppCharts = {
           {
             label: "Positive",
             data: posData,
-            backgroundColor: "#10b981",
+            backgroundColor: "#059669",
             borderRadius: 4
           },
           {
             label: "Neutral",
             data: neuData,
-            backgroundColor: "#f59e0b",
+            backgroundColor: "#d97706",
             borderRadius: 4
           },
           {
             label: "Negative",
             data: negData,
-            backgroundColor: "#f43f5e",
+            backgroundColor: "#e11d48",
             borderRadius: 4
           }
         ]
@@ -195,13 +195,13 @@ const AppCharts = {
         scales: {
           x: {
             stacked: true,
-            ticks: { color: "#9ca3af" },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b" },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           },
           y: {
             stacked: true,
-            ticks: { color: "#9ca3af", stepSize: 1 },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b", stepSize: 1 },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           }
         }
       }
@@ -230,11 +230,11 @@ const AppCharts = {
             ratingDist["5"] || 0
           ],
           backgroundColor: [
-            "#f43f5e",
-            "#fb923c",
-            "#f59e0b",
+            "#e11d48",
+            "#f97316",
+            "#d97706",
             "#84cc16",
-            "#10b981"
+            "#059669"
           ],
           borderRadius: 6
         }]
@@ -247,12 +247,12 @@ const AppCharts = {
         },
         scales: {
           x: {
-            ticks: { color: "#9ca3af" },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b" },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           },
           y: {
-            ticks: { color: "#9ca3af", stepSize: 1 },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b", stepSize: 1 },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           }
         }
       }
@@ -279,16 +279,16 @@ const AppCharts = {
           {
             label: "Positive Feedback",
             data: positiveTrend,
-            borderColor: "#10b981",
-            backgroundColor: "rgba(16, 185, 129, 0.1)",
+            borderColor: "#059669",
+            backgroundColor: "rgba(5, 150, 105, 0.08)",
             fill: true,
             tension: 0.3
           },
           {
             label: "Negative Feedback",
             data: negativeTrend,
-            borderColor: "#f43f5e",
-            backgroundColor: "rgba(244, 63, 94, 0.1)",
+            borderColor: "#e11d48",
+            backgroundColor: "rgba(225, 29, 72, 0.08)",
             fill: true,
             tension: 0.3
           }
@@ -298,12 +298,12 @@ const AppCharts = {
         ...this.commonOptions,
         scales: {
           x: {
-            ticks: { color: "#9ca3af" },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b" },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           },
           y: {
-            ticks: { color: "#9ca3af", stepSize: 1 },
-            grid: { color: "rgba(255, 255, 255, 0.05)" }
+            ticks: { color: "#64748b", stepSize: 1 },
+            grid: { color: "rgba(0, 0, 0, 0.05)" }
           }
         }
       }
